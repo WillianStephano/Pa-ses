@@ -48,6 +48,7 @@ body{
    border-radius: 5px;
    border: 1px solid #d3d3d3;
    box-shadow: 1px 1px 2px #acacac;
+   text-transform: capitalize;
 }
 
 .campo_pesquisa_txt:focus{
@@ -90,8 +91,9 @@ body{
    box-shadow: 1px 5px 5px #c6c6c6bd;
 }
 
-.card_paises img {
+.bandeira_card_pais{
    width: 100%;
+   height: 145px;
 }
 
 .conteudo_card_pais{
