@@ -1,0 +1,111 @@
+body{
+   background-color: #f8f8f8;
+}
+
+.cabecalho{
+   background-color: #ffffff;
+   font-family: 'nunito' ,sans-serif;
+   box-shadow: 0px 2px 5px 1px #00000034;
+}
+
+.cabecalho .container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 90%;
+   padding: 1.5% 0;
+   margin: 0 auto;
+}
+
+.titulo_cabecalho{
+   font-size: 28px;
+   font-weight: 600;
+}
+
+.bt_modo_escuro{
+   font-weight: 600;
+   font-size: 15px;
+}
+
+
+
+
+.secao_pesquisa{
+   background-color: #f8f8f8;
+   width: 90%;
+   margin: 2% auto;
+}
+
+.secao_pesquisa .container{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.campo_pesquisa_txt{
+   width: 35%;
+   padding: 1.1% 2%;
+   border-radius: 5px;
+   border: 1px solid #d3d3d3;
+   box-shadow: 1px 1px 2px #acacac;
+}
+
+.campo_pesquisa_txt:focus{
+   outline: none;
+   border: 1px solid #969696;
+}
+
+.select_pais{
+   border-radius: 5px;
+   padding: 1% 2%;
+   border: 1px solid #d3d3d3;
+   box-shadow: 1px 1px 2px #acacac;
+}
+
+.select_pais:focus{
+   outline: none;
+   border: 1px solid #969696;
+}
+
+
+
+
+
+
+.secao_paises .container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 90%;
+   margin: 0 auto;
+   gap:30px;
+
+}
+
+.card_paises{
+   background-color: #ffffff;
+   box-sizing: border-box;
+   width: 20%;
+   font-family: 'lato';
+   box-shadow: 1px 5px 5px #c6c6c6bd;
+}
+
+.card_paises img {
+   width: 100%;
+}
+
+.conteudo_card_pais{
+   padding: 2% 7% 10% ;
+}
+
+.titulo_card_pais{
+   font-weight: 600;
+   line-height: 2.0em;
+}
+
+.dados_card_pais{
+   line-height: 1.5em;
+   color: #838383;
+   font-size: 14px;
+   font-weight: 600;
+}
