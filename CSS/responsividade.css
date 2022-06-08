@@ -1,0 +1,27 @@
+@media (max-width:425px) {
+
+   .secao_pesquisa .container{
+      flex-direction: column;
+      row-gap: 20px;
+   }
+
+   .campo_pesquisa_txt{
+      width: 90%;
+      padding: 3%;
+   }
+
+   .select_pais{
+      width: 35%;
+      padding: 2%;
+   }
+
+   .secao_paises .container{
+      flex-direction: column;
+      align-items: center;
+      margin: 5% auto;
+   }
+
+   .card_paises{
+      width: 65%;
+   }
+}
