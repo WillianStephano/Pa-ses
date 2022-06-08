@@ -1,5 +1,4 @@
 @media (max-width:425px) {
-
    .secao_pesquisa .container{
       flex-direction: column;
       row-gap: 20px;
