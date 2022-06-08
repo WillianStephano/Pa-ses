@@ -4,32 +4,33 @@ const pesquisaPais = async() => {
    
    const dadosGerais = await fetch(url)
    const dadosPais = await dadosGerais.json()
-   //console.log(dadosPais[0].name.common);
+   console.log(dadosPais);
    
    for (let i = 0; i < dadosPais.length; i++) {
       var nomeDoPais = dadosPais[i].name.common;
       if (nomeDoPais.toUpperCase() == pais.toUpperCase()) {
-         verificaDiv(nomeDoPais)
+         selecionaPais(nomeDoPais)
       }
    } 
    
 }
 var campoPesquisa = document.querySelector('.campo_pesquisa_txt')
 campoPesquisa.addEventListener('keyup', pesquisaPais)
-campoPesquisa.addEventListener('focusout', restaura)
+campoPesquisa.addEventListener('input', restauraPaises)
 
-function restaura() {
+
+function restauraPaises() {
    const colecaoCards = document.querySelectorAll('.card_paises')
    if (campoPesquisa.value == '') {
       for (let i = 0; i < colecaoCards.length; i++) {
          const element = colecaoCards[i];
          element.style.display = 'initial'
       }
-console.log('aaaaaaaaa');
    }
 }
 
-function verificaDiv(nomeDoPais) {
+
+function selecionaPais(nomeDoPais) {
    const colecaoCards = document.querySelectorAll('.card_paises')
    
    for (let i = 0; i < colecaoCards.length; i++) {
@@ -47,9 +48,8 @@ const listaPaises = async() => {
    const url = `https://restcountries.com/v3.1/all`
    const dadosGerais = await fetch(url)
    const dadosListaPaises = await dadosGerais.json()
-   //console.log(dadosListaPaises);
    
-   criaCardPais()
+   criaCardPais(dadosListaPaises)
    
    const colecaoCards = document.querySelectorAll('.card_paises')
    for (let i = 0; i < colecaoCards.length; i++) {
@@ -64,18 +64,17 @@ const listaPaises = async() => {
       bandeiraPais.setAttribute('src' ,dadosListaPaises[i].flags.png)
       nomePais.textContent = dadosListaPaises[i].name.common
       populacaoPais.textContent =`População: ${dadosListaPaises[i].population}` 
-      regiaoPais.textContent = `Região: ${dadosListaPaises[i].continents}`
+      regiaoPais.textContent = `Região: ${dadosListaPaises[i].region}`
       capitalPais.textContent = `Capital: ${dadosListaPaises[i].capital}`
-      
-      
    }
 }
 listaPaises()
 
-function criaCardPais() {
+
+function criaCardPais(dadosListaPaises) {
    const container = document.querySelector('.secao_paises .container')
    var card = document.querySelector('.card_paises')
-   for (let i = 0; i <= 10; i++) {
+   for (let i = 0; i <= dadosListaPaises.length; i++) {
       var cardClone = card.cloneNode(true)
       container.appendChild(cardClone)
       
