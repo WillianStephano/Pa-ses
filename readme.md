@@ -29,7 +29,7 @@ O projeto é composto por uma pagina que contem 2 seções principais:
 
 
 
-<img src="Conteudo/previa-.PNG" alt="Imagem de pré-visualização da pagina">
+<img src="Conteudo/previa-paises.PNG" alt="Imagem de pré-visualização da pagina">
 
 ---
 
