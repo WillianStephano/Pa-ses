@@ -4,7 +4,6 @@ const pesquisaPais = async() => {
    
    const dadosGerais = await fetch(url)
    const dadosPais = await dadosGerais.json()
-   console.log(dadosPais);
    
    for (let i = 0; i < dadosPais.length; i++) {
       var nomeDoPais = dadosPais[i].name.common;
@@ -80,3 +79,57 @@ function criaCardPais(dadosListaPaises) {
       
    }
 }
+
+
+function selecionaRegiao() {
+   var filtroColecao = document.querySelectorAll('.select_pais')
+   
+   for (let i = 0; i < filtroColecao.length; i++) {
+      const elementoFiltro = filtroColecao[i];
+      var teste = document.querySelectorAll('.select_pais option')
+      
+      elementoFiltro.addEventListener('change', function() {
+         switch (this.value) {
+            case 'af':
+               filtraRegiao(teste[1].textContent)
+            break;
+            
+            case 'am':
+               filtraRegiao(teste[2].textContent)
+            break;
+            
+            case 'eu':
+               filtraRegiao(teste[3].textContent)
+            break;
+            
+            case 'oc':
+               filtraRegiao(teste[4].textContent)
+            break;
+
+            case 'inicial':
+               restauraPaises()
+            break;
+
+            default:
+            break;
+         }
+      }, false);
+   }
+}
+selecionaRegiao()
+
+
+function filtraRegiao(teste) {
+   const colecaoCards = document.querySelectorAll('.card_paises')
+   
+   for (let i = 0; i < colecaoCards.length; i++) {
+      var gambiarraRegional = colecaoCards[i].childNodes[3].lastElementChild.childNodes[3].textContent
+      
+      if (gambiarraRegional !== `Região: ${teste}`) {
+         colecaoCards[i].style.display = 'none'
+      }else{
+         colecaoCards[i].style.display = 'initial' 
+      } 
+   }
+}
+//Tenho que tentar tirar ambas gambiarras tentando pegar os elementos pelo value
