@@ -65,6 +65,8 @@ const listaPaises = async() => {
       populacaoPais.textContent =`População: ${dadosListaPaises[i].population}` 
       regiaoPais.textContent = `Região: ${dadosListaPaises[i].region}`
       capitalPais.textContent = `Capital: ${dadosListaPaises[i].capital}`
+      
+      modal(card, dadosListaPaises)
    }
 }
 listaPaises()
@@ -91,25 +93,25 @@ function selecionaRegiao() {
       elementoFiltro.addEventListener('change', function() {
          switch (this.value) {
             case 'af':
-               filtraRegiao(teste[1].textContent)
+            filtraRegiao(teste[1].textContent)
             break;
             
             case 'am':
-               filtraRegiao(teste[2].textContent)
+            filtraRegiao(teste[2].textContent)
             break;
             
             case 'eu':
-               filtraRegiao(teste[3].textContent)
+            filtraRegiao(teste[3].textContent)
             break;
             
             case 'oc':
-               filtraRegiao(teste[4].textContent)
+            filtraRegiao(teste[4].textContent)
             break;
-
+            
             case 'inicial':
-               restauraPaises()
+            restauraPaises()
             break;
-
+            
             default:
             break;
          }
@@ -133,3 +135,19 @@ function filtraRegiao(teste) {
    }
 }
 //Tenho que tentar tirar ambas gambiarras tentando pegar os elementos pelo value
+
+
+function modal(card ,dadosListaPaises) {
+   //Fechar modal
+   document.querySelector('.bt_fechar_modal').addEventListener('click' ,function () {
+      divModal.style.display = 'none'
+   })
+   
+   
+   var divModal = document.querySelector('.modal')
+   card.addEventListener('click' ,() => {
+      divModal.style.display = 'block'
+      
+      
+   })   
+}
