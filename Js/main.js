@@ -138,10 +138,16 @@ function filtraRegiao(teste) {
 
 
 function modal(card ,dadosListaPaises) {
-   //Fechar modal
-   document.querySelector('.bt_fechar_modal').addEventListener('click' ,function () {
+   //Fecha modal
+   document.querySelector('.bt_fechar_modal').addEventListener('click' ,() => {
       divModal.style.display = 'none'
    })
+   
+   window.onclick = (event) => {
+      if (event.target == divModal) {
+         divModal.style.display = "none"
+      }
+   }
    
    
    var divModal = document.querySelector('.modal')
@@ -150,4 +156,5 @@ function modal(card ,dadosListaPaises) {
       
       
    })   
+   
 }
