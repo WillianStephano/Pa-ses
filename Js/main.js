@@ -169,7 +169,7 @@ function constroeModal(dadosListaPaises ,card) {
                <li class="nome_pais_detail">Name: ${dadosListaPaises[1].name.common}</li>
                <li class="populacao_pais_detail">População: ${dadosListaPaises[1].population}</li>
                <li class="regiao_pais_detail">Região: ${dadosListaPaises[1].region}</li>
-               <li class="subregiao_pais_detail">Sub Regão: ${dadosListaPaises[1].subregion}</li>
+               <li class="subregiao_pais_detail">Sub Região: ${dadosListaPaises[1].subregion}</li>
                <li class="capital_pais_detail">Capital: ${dadosListaPaises[1].capital}</li>
                <li class="moeda_pais_detail">Moeda: ${dadosListaPaises[1].currencies}</li>
                <li class="lingua_pais_detail">Linguas: ${dadosListaPaises[1].languages}</li>
