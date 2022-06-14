@@ -66,7 +66,7 @@ const listaPaises = async() => {
       regiaoPais.textContent = `Região: ${dadosListaPaises[i].region}`
       capitalPais.textContent = `Capital: ${dadosListaPaises[i].capital}`
       
-      modal(card, dadosListaPaises)
+      abreModal(card, dadosListaPaises)
    }
 }
 listaPaises()
@@ -137,21 +137,49 @@ function filtraRegiao(teste) {
 //Tenho que tentar tirar ambas gambiarras tentando pegar os elementos pelo value
 
 
-function modal(card ,dadosListaPaises) {
+function abreModal(card, dadosListaPaises) {
    //Fecha modal
    document.querySelector('.bt_fechar_modal').addEventListener('click' ,() => {
-      divModal.style.display = 'none'
+      divModal.classList.remove('visivel')
    })
    window.onclick = (event) => {
       if (event.target == divModal) {
-         divModal.style.display = "none"
+         divModal.classList.remove('visivel')
       }
    }
 
    //Abre modal
    var divModal = document.querySelector('.modal')
    card.addEventListener('click' ,() => {
-      divModal.style.display = 'block'
+      constroeModal(dadosListaPaises)
+
+      divModal.classList.toggle('visivel')
    })   
    
 }
+
+function constroeModal(dadosListaPaises ,card) {
+   var detalhesPais = document.querySelector('.detalhes_pais_modal')
+   detalhesPais.innerHTML = 
+   `
+      <div class="detalhes_pais_modal">
+         <div class="container">
+            <img class="flag_pais_datail" src="${dadosListaPaises[1].flags.png}" alt="">
+            <ul class="pais_detail">
+               <li class="nome_pais_detail">Name: ${dadosListaPaises[1].name.common}</li>
+               <li class="populacao_pais_detail">População: ${dadosListaPaises[1].population}</li>
+               <li class="regiao_pais_detail">Região: ${dadosListaPaises[1].region}</li>
+               <li class="subregiao_pais_detail">Sub Regão: ${dadosListaPaises[1].subregion}</li>
+               <li class="capital_pais_detail">Capital: ${dadosListaPaises[1].capital}</li>
+               <li class="moeda_pais_detail">Moeda: ${dadosListaPaises[1].currencies}</li>
+               <li class="lingua_pais_detail">Linguas: ${dadosListaPaises[1].languages}</li>
+            </ul>
+         </div>
+      </div>
+   `
+   console.log(dadosListaPaises);
+}
+
+
+
+
