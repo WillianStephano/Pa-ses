@@ -23,4 +23,12 @@
    .card_paises{
       width: 65%;
    }
+
+   .flag_pais_datail{
+      width: 100%;
+   }
+
+   .pais_detail{
+      width: 90%;
+   }
 }
