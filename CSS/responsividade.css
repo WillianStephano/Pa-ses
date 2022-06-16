@@ -31,4 +31,14 @@
    .pais_detail{
       width: 90%;
    }
+
+   .bt_fechar_modal{
+      float: none;
+   }
+
+   .flag_pais_detail{
+      width: 100%;
+      height: auto;
+      
+   }
 }
