@@ -23,8 +23,9 @@
 ## 📚 Seções
 O projeto é composto por uma pagina que contem 2 seções principais:
 
-- **Pesquisa e filtro:** Barra de pesquisa que busca o nome do pais que funciona no idioma ingles e um filtro por regiao dos paises;
-- **Seção Países:** Contem informações de população, nome da capital e região de todos os paises disponiveis na API assim como imagem de suas respectivas bandeiras;
+- **Pesquisa e filtro:** Barra de pesquisa que busca o nome do pais que funciona no idioma pt-br e um filtro por regiao dos paises;
+- **Seção Países:** Contem informações de população, nome da capital e região de todos os paises disponiveis na API assim como imagem de suas respectivas bandeiras em um card;
+- **Modal detalhes:** Ao clicar em um card abre um modal gerado dinamicamente contendo informações detalhadas acerca do pais selecionado;
 
 
 
