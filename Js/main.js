@@ -1,12 +1,12 @@
 const pesquisaPais = async () => {
    var pais = document.querySelector('.campo_pesquisa_txt').value
-   const url = `https://restcountries.com/v3.1/name/${pais}`
+   const url = `https://restcountries.com/v3.1/translation/${pais}`
    
    const dadosGerais = await fetch(url)
    const dadosPais = await dadosGerais.json()
    
    for (let i = 0; i < dadosPais.length; i++) {
-      var nomeDoPais = dadosPais[i].name.common;
+      var nomeDoPais = dadosPais[i].translations.por.common;
       if (nomeDoPais.toUpperCase() == pais.toUpperCase()) {
          selecionaPais(nomeDoPais)
       }
@@ -61,7 +61,7 @@ const listaPaises = async () => {
       let capitalPais = card.querySelector('.capital_pais')
       
       bandeiraPais.setAttribute('src', dadosListaPaises[i].flags.png)
-      nomePais.textContent = dadosListaPaises[i].name.common
+      nomePais.textContent = dadosListaPaises[i].translations.por.common
       populacaoPais.textContent = `População: ${dadosListaPaises[i].population}`
       regiaoPais.textContent = `Região: ${dadosListaPaises[i].region}`
       capitalPais.textContent = `Capital: ${dadosListaPaises[i].capital}`
@@ -155,11 +155,11 @@ function abreModal(card) {
    //Abre modal
    card.addEventListener("click", async () => {
       const title = card.children[1].children[0].textContent;
-      const pais = await fetch(`https://restcountries.com/v3.1/name/${title}`);
+      const pais = await fetch(`https://restcountries.com/v3.1/translation/${title}`);
       const data = await pais.json();
       
       constroeModal(data);
-      //console.log(Object.values(data[0].languages));
+      console.log(Object.values(data[0].currencies)[0].name)
       
       divModal.classList.toggle("visivel");
    });
@@ -173,15 +173,16 @@ function constroeModal(dadosPais) {
    `
    <div class="detalhes_pais_modal">
       <div class="container">
-         <img class="flag_pais_datail" src="${dadosPais[0].flags.png}" alt="">
+         <img class="flag_pais_detail" src="${dadosPais[0].flags.png}" alt="">
          <ul class="pais_detail">
-            <li class="nome_pais_detail">Name: ${dadosPais[0].name.common}</li>
-            <li class="populacao_pais_detail">População: ${dadosPais[0].population}</li>
-            <li class="regiao_pais_detail">Região: ${dadosPais[0].region}</li>
-            <li class="subregiao_pais_detail">Sub Região: ${dadosPais[0].subregion}</li>
-            <li class="capital_pais_detail">Capital: ${dadosPais[0].capital}</li>
-            <li class="moeda_pais_detail">Moeda: ${Object.keys(dadosPais[0].currencies)[0]}</li>
-            <li class="lingua_pais_detail">Linguas: ${Object.values(dadosPais[0].languages)}</li>
+            <li class="item_pais_detail"><strong>Nome:</strong> ${dadosPais[0].translations.por.common}</li>
+            <li class="item_pais_detail"><strong>Nome oficial:</strong> ${dadosPais[0].translations.por.official}</li>
+            <li class="item_pais_detail"><strong>Populaçao:</strong> ${dadosPais[0].population}</li>
+            <li class="item_pais_detail"><strong>Região:</strong> ${dadosPais[0].region}</li>
+            <li class="item_pais_detail"><strong>Sub Região:</strong> ${dadosPais[0].subregion}</li>
+            <li class="item_pais_detail"><strong>Capital:</strong> ${dadosPais[0].capital}</li>
+            <li class="item_pais_detail"><strong>Moeda:</strong> ${Object.values(dadosPais[0].currencies)[0].name}</li>
+            <li class="item_pais_detail"><strong>Linguas:</strong> ${Object.values(dadosPais[0].languages)}</li>
          </ul>
       </div>
    </div>
