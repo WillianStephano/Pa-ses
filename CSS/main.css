@@ -145,19 +145,26 @@ body{
 .detalhes_pais_modal  .container{
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
-   margin: 5% 4%;
+   justify-content: space-around;
+   margin: 5% 2% ;
+   width: 90%;
 }
 
-.flag_pais_datail{
+.flag_pais_detail{
    box-shadow: 1px 5px 5px #0000004a;
    width: 50%;
+   height: 280px;
 }
 
-.pais_detail li{
-   font-size: 16px;
+.item_pais_detail{
+   font-size: 17px;
    font-family: 'nunito';
    line-height: 1.5em;
+   color: #1f1f1f;
+}
+
+.item_pais_detail strong{
+   font-weight: 700;
 }
 
 .bt_fechar_modal{
