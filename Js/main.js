@@ -61,6 +61,7 @@ const listaPaises = async () => {
       let capitalPais = card.querySelector('.capital_pais')
       
       bandeiraPais.setAttribute('src', dadosListaPaises[i].flags.png)
+      bandeiraPais.setAttribute('alt', 'Bandeira do pais')
       nomePais.textContent = dadosListaPaises[i].translations.por.common
       populacaoPais.textContent = `População: ${dadosListaPaises[i].population}`
       regiaoPais.textContent = `Região: ${dadosListaPaises[i].region}`

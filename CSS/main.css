@@ -22,6 +22,11 @@ body{
    font-weight: 600;
 }
 
+.titulo_cabecalho a{
+   text-decoration: none;
+   color: #000000;
+}
+
 .bt_modo_escuro{
    font-weight: 600;
    font-size: 15px;
@@ -108,7 +113,7 @@ body{
 
 .dados_card_pais{
    line-height: 1.5em;
-   color: #838383;
+   color: #595959;
    font-size: 14px;
    font-weight: 600;
 }
